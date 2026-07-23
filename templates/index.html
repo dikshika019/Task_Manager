@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple HTML Page</title>
+    <!-- Minimal CSS – clean, readable, no frameworks -->
+    <style>
+        /* ----- reset & base ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fcfcfc;
+            color: #1e1e1e;
+            padding: 1.5rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: 0;
+            border-top: 1px solid #d0d7de;
+        }
+
+        /* ----- simple components ----- */
+        .box {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+        }
+
+        .tag {
+            background: #eef2f6;
+            padding: 0.1rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .badge {
+            background: #ddf4ff;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        .badge-success {
+            background: #dafbe1;
+        }
+
+        .badge-warning {
+            background: #fff5d4;
+        }
+
+        .list-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.8rem;
+            list-style: none;
+            padding: 0.4rem 0;
+        }
+
+        .list-inline li {
+            background: #f6f8fa;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            border: 1px solid #e1e4e8;
+        }
+
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 2.5rem;
+            border-top: 1px solid #d0d7de;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 2rem;
+            list-style: none;
+            padding: 0.2rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .columns {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================== -->
+    <!--  SIMPLE HTML PAGE – NO JINJA, NO TEMPLATING               -->
+    <!--  Everything is static. Use this as a base or copy-paste.  -->
+    <!-- ========================================================== -->
+
+    <header>
+        <h1>👋 Simple HTML page</h1>
+        <p style="color: #2c3e50;">
+            <strong>User:</strong> Guest
+            <span class="badge" style="background:#f1f3f4;">✗ not logged in</span>
+        </p>
+        <hr />
+    </header>
+
+    <main>
+        <!-- ====== SECTION: WELCOME ====== -->
+        <section class="box">
+            <h2>Welcome, friend!</h2>
+            <p>
+                This is a <strong>simple HTML page</strong> with minimal CSS.
+                No JavaScript, no frameworks, no templating — just pure HTML &amp; CSS.
+            </p>
+            <p style="margin-top: 0.5rem;">
+                <span class="tag">&lt;h1&gt;</span>
+                <span class="tag">&lt;section&gt;</span>
+                <span class="tag">&lt;ul&gt;</span>
+                <span class="tag">.box</span>
+                <span class="tag">.badge</span>
+            </p>
+        </section>
+
+        <!-- ====== SECTION: ITEMS ====== -->
+        <section class="box">
+            <h3>📦 Items (4)</h3>
+            <ul class="list-inline">
+                <li>Home <span class="badge" style="background:#f2e3ff;">first</span></li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact <span class="badge" style="background:#ffe3e3;">last</span></li>
+            </ul>
+            <p style="font-size: 0.9rem; color: #444;">
+                <span class="tag">static list</span> — edit the <code>&lt;ul&gt;</code> to change items.
+            </p>
+        </section>
+
+        <!-- ====== SECTION: FEATURES ====== -->
+        <section class="box">
+            <h3>⚙️ Features (3)</h3>
+            <ul style="padding-left: 1.2rem; margin: 0.5rem 0;">
+                <li style="margin-bottom: 0.3rem;">
+                    <strong>Lightweight</strong> — no dependencies, loads fast
+                    <span class="badge badge-success">active</span>
+                </li>
+                <li style="margin-bottom: 0.3rem;">
+                    <strong>Responsive</strong> — works on mobile &amp; desktop
+                    <span class="badge badge-success">active</span>
+                </li>
+                <li style="margin-bottom: 0.3rem;">
+                    <strong>Dark mode</strong> — coming soon
+                    <span class="badge badge-warning">planned</span>
+                </li>
+            </ul>
+            <p style="font-size: 0.85rem; color: #444;">
+                <span class="tag">static content</span> — update the list directly.
+            </p>
+        </section>
+
+        <!-- ====== SECTION: CONDITION (static) ====== -->
+        <section class="box">
+            <h3>🔁 Status: guest mode</h3>
+            <div style="background:#f6f8fa; padding:0.6rem 1.2rem; border-radius:6px;">
+                <p>🔓 <strong>Guest mode</strong> — public content only.</p>
+                <p style="font-size:0.9rem;">Please <a href="#">log in</a> to see more.</p>
+            </div>
+            <p style="margin-top:0.5rem; font-size:0.85rem;">
+                <span class="tag">static condition</span> — change the text manually.
+            </p>
+        </section>
+
+        <!-- ====== SECTION: FILTERS (static examples) ====== -->
+        <section class="box">
+            <h3>🧹 Text transformations (static)</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; background:#f6f8fa; padding:0.5rem 1rem; border-radius:6px;">
+                <span><span class="tag">uppercase</span> "hello" → HELLO</span>
+                <span><span class="tag">lowercase</span> "JINJA" → jinja</span>
+                <span><span class="tag">title case</span> "html page" → Html Page</span>
+                <span><span class="tag">replace</span> "foo bar" → baz bar</span>
+                <span><span class="tag">length</span> [a,b,c] → 3</span>
+                <span><span class="tag">join</span> [1,2,3] → 1 · 2 · 3</span>
+            </div>
+            <p style="margin-top:0.5rem; font-size:0.85rem; color:#444;">
+                <span class="tag">static examples</span> — edit the text inside the spans.
+            </p>
+        </section>
+
+        <!-- ====== SECTION: VARIABLES (static) ====== -->
+        <section class="box" style="background:#fafbfc;">
+            <h4>📌 Static values</h4>
+            <ul class="columns">
+                <li><span class="tag">user</span> → Guest</li>
+                <li><span class="tag">logged_in</span> → False</li>
+                <li><span class="tag">items</span> → 4 items</li>
+                <li><span class="tag">features</span> → 3 features</li>
+                <li><span class="tag">app_name</span> → MyApp</li>
+                <li><span class="tag">version</span> → 1.0</li>
+                <li><span class="tag">year</span> → 2026</li>
+            </ul>
+            <p style="font-size:0.8rem; color:#555; margin-top:0.2rem;">
+                <i>All values are hard-coded. Edit them directly in the HTML.</i>
+            </p>
+        </section>
+
+        <!-- ====== SECTION: MACRO (static HTML) ====== -->
+        <section class="box">
+            <h4>🧩 Reusable pieces (static)</h4>
+            <p>
+                <span style="background:#eef2f6; padding:0.1rem 0.6rem; border-radius:20px; margin-right:0.3rem;">
+                    database ✅
+                </span>
+                <span style="background:#eef2f6; padding:0.1rem 0.6rem; border-radius:20px; margin-right:0.3rem;">
+                    cache ⚠️
+                </span>
+                <span style="background:#eef2f6; padding:0.1rem 0.6rem; border-radius:20px; margin-right:0.3rem;">
+                    api ✅
+                </span>
+            </p>
+            <p style="font-size:0.8rem; color:#555;">
+                <span class="tag">static HTML</span> — copy-paste to reuse.
+            </p>
+        </section>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+        <p>
+            <strong>MyApp</strong>
+            · version 1.0
+            · © 2026
+            · built with <span class="tag">HTML &amp; CSS</span>
+        </p>
+        <p style="font-size:0.85rem; margin-top:0.3rem;">
+            <span>👤 guest mode — <a href="#">login</a></span>
+            &nbsp;·&nbsp;
+            <span>items: Home, About, Services, Contact</span>
+        </p>
+        <p style="font-size:0.75rem; color:#6e7b8c; margin-top:0.8rem;">
+            <i>This page uses minimal CSS — only basic spacing, borders, and a clean font.</i>
+        </p>
+    </footer>
+
+</body>
+</html>
